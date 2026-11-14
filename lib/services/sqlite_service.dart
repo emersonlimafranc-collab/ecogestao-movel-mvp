@@ -1,11 +1,11 @@
 class SqliteService {
-  /// Gravação imutável local em SQLite (RNF02 < 30ms e RNF03 Imutabilidade)
+  /// Gravacao imutavel local em SQLite (RNF02 < 30ms e RNF03 Imutabilidade)
   Future> registrarPesagemImutavel({
     required String material,
     required double pesoKg,
   }) async {
     if (pesoKg <= 0) {
-      throw ArgumentError('O peso líquido deve ser maior que zero.');
+      throw ArgumentError('O peso liquido deve ser maior que zero.');
     }
 
     final timestamp = DateTime.now().toIso8601String();
