@@ -1,0 +1,26 @@
+name: CI - Testes Automatizados EcoGestao
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  testes-unitarios-integracao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo do repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar ambiente Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Instalar dependencias (pubspec.yaml)
+        run: flutter pub get
+
+      - name: Executar Testes Unitarios e de Integracao (Coverage)
+        run: flutter test --coverage
