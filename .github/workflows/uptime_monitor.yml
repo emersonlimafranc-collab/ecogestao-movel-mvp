@@ -2,14 +2,14 @@ name: Monitoramento de Disponibilidade (Health Check UP/DOWN)
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Verifica disponibilidade a cada 30 minutos
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
   health_check_producao:
     runs-on: ubuntu-latest
     steps:
-      - name: Verificar Status HTTP 200 (EcoGestão Móvel Produção)
+      - name: Verificar Status HTTP 200 (EcoGestao Movel Producao)
         run: |
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://emersonlimafranc-collab.github.io/ecogestao-movel-mvp/)
           echo "HTTP Status retornado pelo servidor: $STATUS"
