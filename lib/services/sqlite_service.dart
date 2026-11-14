@@ -1,6 +1,6 @@
 class SqliteService {
   /// Gravacao imutavel local em SQLite (RNF02 < 30ms e RNF03 Imutabilidade)
-  Future> registrarPesagemImutavel({
+  Future registrarPesagemImutavel({
     required String material,
     required double pesoKg,
   }) async {
